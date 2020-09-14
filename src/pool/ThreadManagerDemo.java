@@ -1,10 +1,11 @@
 package pool;
 
 public class ThreadManagerDemo {
-	
-	public static void main(String[] args) {
-		ThreadPoolManager manager = new ThreadPoolManager(2);
-		//now lets submit task
+
+    public static void main(String[] args) {
+        ThreadPoolManager manager = new ThreadPoolManager(2);
+        System.out.println("Yogi");
+        //now lets submit task
 		/*for(int i = 0; i<10; i++){
 			manager.submitTask(new Runnable() {
 	            @Override
@@ -18,9 +19,9 @@ public class ThreadManagerDemo {
 	                System.out.println("Task A Completed....");
 	            }
 	        });*/
-			
-		//}
-		manager.submitTask(new Runnable() {
+
+        //}
+        manager.submitTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("Starting Task B....");
@@ -32,20 +33,20 @@ public class ThreadManagerDemo {
                 System.out.println("Task B Completed....");
             }
         });
-		
-		manager.submitTask(new Runnable() {
-	            @Override
-	            public void run() {
-	                System.out.println("Starting Task C....");
+
+        manager.submitTask(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Starting Task C....");
 	               /* try {
 	                    Thread.sleep(1000);
 	                } catch (InterruptedException e) {
 	                    e.printStackTrace();
 	                }*/
-	                System.out.println("Task C Completed....");
-	            }
-	        });
-		manager.submitTask(new Runnable() {
+                System.out.println("Task C Completed....");
+            }
+        });
+        manager.submitTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("Starting Task D....");
@@ -57,7 +58,7 @@ public class ThreadManagerDemo {
                 System.out.println("Task D Completed....");
             }
         });
-		manager.submitTask(new Runnable() {
+        manager.submitTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("Starting Task E....");
@@ -69,7 +70,7 @@ public class ThreadManagerDemo {
                 System.out.println("Task E Completed....");
             }
         });
-		manager.submitTask(new Runnable() {
+        manager.submitTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("Starting Task F....");
@@ -81,7 +82,7 @@ public class ThreadManagerDemo {
                 System.out.println("Task F Completed....");
             }
         });
-		manager.submitTask(new Runnable() {
+        manager.submitTask(new Runnable() {
             @Override
             public void run() {
                 System.out.println("Starting Task G....");
@@ -93,8 +94,8 @@ public class ThreadManagerDemo {
                 System.out.println("Task G Completed....");
             }
         });
-	
-		
-	}
+
+
+    }
 
 }

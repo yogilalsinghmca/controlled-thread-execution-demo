@@ -23,7 +23,8 @@ public class Lock {
     }
 
     static Lock lck;
-    public static void main (String [] args) throws InterruptedException {
+
+    public static void main(String[] args) throws InterruptedException {
 
         lck = new Lock(3);
         Runnable r = new Runnable() {
@@ -40,7 +41,7 @@ public class Lock {
             }
         };
 
-        for (int t = 0; t < 20; t ++) 
+        for (int t = 0; t < 20; t++)
             new Thread(r).start();
     }
 
