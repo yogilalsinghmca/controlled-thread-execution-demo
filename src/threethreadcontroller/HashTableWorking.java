@@ -9,7 +9,7 @@ public class HashTableWorking {
 
     public static void main(String[] args) {
 
-        ConcurrentHashMap<MyClass, String> ht = new ConcurrentHashMap<MyClass, String>(16);
+        ConcurrentHashMap<MyClass, String> ht = new ConcurrentHashMap<>(16);
         MyClass m1 = new MyClass("yogi1", 1);
         MyClass m2 = new MyClass("yogi2", 2);
         MyClass m3 = new MyClass("yogi3", 3);
@@ -94,7 +94,8 @@ public class HashTableWorking {
         ht.put(m40, "yogi40");
         ht.put(m41, "yogi41");
 
-        List ls = new ArrayList();
+        List<String> ls = new ArrayList<>();
+        ls.add("Test");
         ls.iterator();
         ht.elements();
 
@@ -120,21 +121,23 @@ class MyClass {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null)
+        }
+        if (obj == null) {
             return false;
-        if (getClass() != obj.getClass())
+        }
+        if (getClass() != obj.getClass()) {
             return false;
+        }
         MyClass other = (MyClass) obj;
+
         if (name == null) {
             if (other.name != null)
                 return false;
         } else if (!name.equals(other.name))
             return false;
-        if (rollno != other.rollno)
-            return false;
-        return true;
+        return rollno == other.rollno;
     }
 
     public String getName() {
